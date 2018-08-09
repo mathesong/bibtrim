@@ -1,0 +1,12 @@
+Package: bibtrim
+Type: Package
+Title: Creates Project-Specific BibTeX Files
+Version: 0.0.9000
+Author: Granville Matheson
+Maintainer: Granville Matheson <mathesong@gmail.com>
+Description: Functions for adding to and trimming project-specific
+    BibTex files from a reference library file.
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 6.0.1
