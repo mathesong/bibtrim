@@ -14,11 +14,11 @@
 #'
 cites_get <- function(rmdfile) {
 
-  text <- readLines(rmdfile) %>%
-    paste(collapse = " ")
+  text <- readLines(rmdfile)
+  text <- paste(text, collapse = " ")
 
-  citations <- stringr::str_match_all(text, "@(\\w*)[ ;\\]]")[[1]][,2] %>%
-    unique()
+  citations <- stringr::str_match_all(text, "@(\\w*)[ ;\\]]")[[1]][,2]
+  citations <- unique(citations)
 
   return(citations)
 }
