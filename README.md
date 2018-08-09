@@ -32,9 +32,9 @@ The main do-it-all function is called `bib_megafix()`, which
 bib_megafix(rmdfolder = getwd(),
             biblib_file = 'library/library.bib',
             bibref_file_locations = c(
-              "C:/OfficePC/Documents/BibTeX_files/library.bib", # Office
-              "E:/HomePC/Documents/BibTeX_files/library.bib",   # Home
-              "C:/Laptop/Documents/BibTeX_files/library.bib"    # Laptop
+              "C:/Users/OfficePC/Documents/BibTeX_files/library.bib", # Office
+              "E:/Users/HomePC/Documents/BibTeX_files/library.bib",   # Home
+              "C:/Users/Laptop/Documents/BibTeX_files/library.bib"    # Laptop
             ), 
             trim = F)
 ```
