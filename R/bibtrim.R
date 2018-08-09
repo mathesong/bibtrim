@@ -62,7 +62,7 @@ bib_add <- function(biblib_file, bibref_file, citations) {
   bibref_add <- dplyr::filter(bibref, BIBTEXKEY %in% add_from_bibref)
 
   biblib <- dplyr::bind_rows(biblib, bibref_add)
-  biblib <- dplyr::arrange(biblip, CATEGORY, BIBTEXKEY)
+  biblib <- dplyr::arrange(biblib, CATEGORY, BIBTEXKEY)
 
   bib2df::df2bib(biblib, biblib_file)
 
