@@ -45,6 +45,10 @@ bib_add <- function(biblib_file, bibref_file, citations) {
   biblib <- bib2df::bib2df(biblib_file)
   bibref <- bib2df::bib2df(bibref_file)
 
+  biblib$YEAR = as.numeric(biblib$YEAR) # Had some weird errors due to this
+  bibref$YEAR = as.numeric(bibref$YEAR) # Had some weird errors due to this
+
+
   not_in_biblib <- citations[!citations %in% biblib$BIBTEXKEY]
 
   if(length(not_in_biblib) == 0) {
@@ -58,7 +62,7 @@ bib_add <- function(biblib_file, bibref_file, citations) {
                   paste(not_in_bibref, collapse = " "), sep = " "))
   }
 
-    add_from_bibref <- not_in_biblib[not_in_biblib %in% bibref]
+  add_from_bibref <- not_in_biblib[not_in_biblib %in% bibref$BIBTEXKEY]
   bibref_add <- dplyr::filter(bibref, BIBTEXKEY %in% add_from_bibref)
 
   biblib <- dplyr::bind_rows(biblib, bibref_add)
