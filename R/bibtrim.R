@@ -14,7 +14,7 @@
 #'
 cites_get <- function(rmdfile) {
 
-  text <- readLines(rmdfile)
+  text <- readLines(rmdfile, warn = F)
   text <- paste(text, collapse = " ")
 
   citations <- stringr::str_match_all(text, "@(\\w*)[ ;\\]]")[[1]][,2]
@@ -53,10 +53,10 @@ bib_add <- function(biblib_file, bibref_file, citations) {
 
   not_in_bibref <- citations[!not_in_biblib %in% bibref$BIBTEXKEY]
 
-  warning(paste("The following references are not in the reference library:",
-                paste(not_in_bibref, collapse = " "), sep = " "))
-
-  if(length(not_))
+  if(length(not_in_bibref) > 0) {
+    warning(paste("The following references are not in the reference library:",
+                  paste(not_in_bibref, collapse = " "), sep = " "))
+  }
 
     add_from_bibref <- not_in_biblib[not_in_biblib %in% bibref]
   bibref_add <- dplyr::filter(bibref, BIBTEXKEY %in% add_from_bibref)
