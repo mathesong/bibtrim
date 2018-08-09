@@ -122,7 +122,7 @@ cites_get_all <- function(rmdfiles) {
 rmd_get_all <- function(rmdfolder = getwd(), recursive=T, ...) {
 
   list.files(path = rmdfolder, pattern = "*.Rmd", recursive = recursive,
-             include.dirs = F, ignore.case = ignore.case, ...)
+             include.dirs = F, ...)
 }
 
 #' Check which reference bibtex file exists
